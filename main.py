@@ -1,4 +1,4 @@
-# ============================== Usted esta en estudiante.
+# ============================== Usted esta en Profesor.
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
 
