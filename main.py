@@ -1,4 +1,4 @@
-# ============================== Usted esta en Notas.
+# ============================== Usted esta en Curso.
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
 
