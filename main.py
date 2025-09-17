@@ -1,4 +1,4 @@
-# ============================== Usted esta en Profesor.
+# ============================== Usted esta en Notas.
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
 
