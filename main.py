@@ -1,4 +1,4 @@
-# ============================== Usted esta en Curso.
+# ============================== Usted esta en Utilidad.
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
 
