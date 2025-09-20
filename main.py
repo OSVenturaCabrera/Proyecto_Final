@@ -1,6 +1,8 @@
 # ============================== Usted esta en Profesor.
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
+import os
+os.system("cls")
 
 # Diccionarios para almacenar la información
 estudiantes = {}
@@ -161,9 +163,24 @@ def menu_principal():
         opcion = input("Elige una opción: ")
         
         if opcion == "1":
-            print("Opciones de estudiantes: agregar, eliminar, listar, buscar")
+            print("Opciones de estudiantes: 1: agregar, 2: eliminar, 3: listar, 4: buscar")
         elif opcion == "2":
-            print("Opciones de maestros: agregar, eliminar, listar, buscar")
+            print("Opciones de estudiantes: 1: agregar, 2: eliminar, 3: listar, 4: buscar")
+            op = int(input("Que quieres realizar: "))
+            if op == 1:
+                Veces = int(input("cuantos Maestro Quieres agregar: "))
+                for i in range(Veces):
+                    nombre = input("Nombre del Maestro: ")
+                    id_maestro = input("ID del Maestro: ")
+                    agregar_maestro(nombre, id_maestro)
+            if op == 2:
+                id_maestro = input("ID Del Maestro que quiere Eliminar: ")
+                eliminar_maestro(id_maestro)
+            if op == 3:
+                listar_maestros()
+            if op == 4:
+                id_maestro = input("Id del Maestro para buscarlo: ")
+                buscar_maestro(id_maestro)
         elif opcion == "3":
             print("Opciones de cursos: agregar, eliminar, listar, asignar maestro")
         elif opcion == "4":
