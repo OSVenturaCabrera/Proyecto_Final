@@ -1,6 +1,7 @@
 # ==============================
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
+import json
 
 # Diccionarios para almacenar la información
 estudiantes = {}
@@ -140,13 +141,33 @@ def mejores_estudiantes(id_curso, n=5):
 # Funciones de utilidad
 # ------------------------------
 def guardar_datos():
-    """Aquí se podría guardar en archivos (implementación pendiente)"""
-    print("Función para guardar datos pendiente de implementar.")
+    """Guarda los datos en archivos JSON"""
+    with open("estudiantes.json", "w", encoding="utf-8") as f:
+        json.dump(estudiantes, f)
+    with open("maestros.json", "w", encoding="utf-8") as f:
+        json.dump(maestros, f)
+    with open("cursos.json", "w", encoding="utf-8") as f:
+        json.dump(cursos, f)
+    with open("notas.json", "w", encoding="utf-8") as f:
+        json.dump(notas, f)
+    print("Datos guardados correctamente.")
 
 def cargar_datos():
-    """Aquí se podría cargar datos desde archivos (implementación pendiente)"""
-    print("Función para cargar datos pendiente de implementar.")
-
+    """Carga los datos desde archivos JSON si existen"""
+    global estudiantes, maestros, cursos, notas
+    if os.path.exists("estudiantes.json"):
+        with open("estudiantes.json", "r", encoding="utf-8") as f:
+            estudiantes = json.load(f)
+    if os.path.exists("maestros.json"):
+        with open("maestros.json", "r", encoding="utf-8") as f:
+            maestros = json.load(f)
+    if os.path.exists("cursos.json"):
+        with open("cursos.json", "r", encoding="utf-8") as f:
+            cursos = json.load(f)
+    if os.path.exists("notas.json"):
+        with open("notas.json", "r", encoding="utf-8") as f:
+            notas = json.load(f)
+    print("Datos cargados correctamente.")
 # ------------------------------
 # Menú principal
 # ------------------------------
