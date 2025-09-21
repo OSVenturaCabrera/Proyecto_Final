@@ -188,8 +188,27 @@ def menu_principal():
             print("Opciones de maestros: agregar, eliminar, listar, buscar")
         elif opcion == "3":
             print("Opciones de cursos: agregar, eliminar, listar, asignar maestro")
+
+
         elif opcion == "4":
-            print("Opciones de notas: agregar, listar, promedio, mejores")
+            print("Opciones de notas")
+            print("1: agregar    2: listar   3: promedio      4: mejores")
+            op = int(input("Que Opcion desea Realizar: "))
+            if op == 1:
+                id_estudiante = input("Id del estudiante Al que va agregar la nota: ")
+                id_curso = input("Id Del curso del estuidantes: ")
+                nota = float(int("Nota del Estudiante: "))
+                agregar_nota(id_estudiante, id_curso, nota)
+            if op == 2:
+                id_estudiante = input("Id del estudiante para ver la notas: ")
+                listar_notas_estudiante(id_estudiante)
+            if op == 3:
+                id_estudiante = input("Id del estudiante para ver la notas: ")
+                calcular_promedio(id_estudiante)
+            if op == 4:
+                id_curso =  input("Id del curso: ")
+                mejores_estudiantes(id_curso, n=5)
+
         elif opcion == "5":
             print("Saliendo del sistema...")
             break
