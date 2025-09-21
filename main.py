@@ -2,6 +2,9 @@
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
 
+import os
+os.system("cls") # limpiar consola
+
 # Diccionarios para almacenar la información
 estudiantes = {}
 maestros = {}
@@ -32,7 +35,11 @@ def listar_estudiantes():
 
 def buscar_estudiante(id_estudiante):
     """Busca un estudiante por ID"""
-    return estudiantes.get(id_estudiante, "Estudiante no encontrado")
+    nombre = estudiantes.get(id_estudiante)
+    if id_estudiante in estudiantes.keys():
+        print(f"el estudiante del ID: {id_estudiante} es {nombre}")
+    else:
+        print("Error!!, ID no encontrado.")
 
 # ------------------------------
 # Funciones de gestión de maestros
@@ -161,7 +168,35 @@ def menu_principal():
         opcion = input("Elige una opción: ")
         
         if opcion == "1":
-            print("Opciones de estudiantes: agregar, eliminar, listar, buscar")
+            print("Opciones de estudiantes, presione el numero segun su opcion: ")
+            op = int(input("\n1: agregar, 2: eliminar, 3: listar, 4: buscar | "))
+            match op:
+                case 1:
+                    cantidad = int(input("Cuantos estudiantes desea ingresar? "))
+                    try:
+                        for i in range(cantidad):
+                            nombre_estudiante = str(input("Ingresa el nombre de tu estudiante: "))
+                            iD_estudiante = int(input(f"Ingresa el ID de {nombre_estudiante}: "))
+                            agregar_estudiante(nombre_estudiante, iD_estudiante)
+                    except:
+                        print("Error!!, debe ingresar los datos de forma correcta.")
+                case 2:
+                    try:
+                        iD_estudiante = int(input(f"Ingresa el ID de su estuadiente a eliminar: "))
+                        eliminar_estudiante(iD_estudiante)
+                    except:
+                        print("Error!!, ID no encontrado.")
+                case 3:
+                    # muestra los estudiantes de forma ordenada:
+                    listar_estudiantes()
+                case 4:
+                    try:
+                        iD_estudiante = int(input(f"Ingresa el ID de su estuadiente a bucar: "))
+                        buscar_estudiante(iD_estudiante)
+                    except:
+                        print("Error!!, ID no encontrado.")
+                case _:
+                    print("Error!!, opcion no valida, vuelva a intentarlo.")
         elif opcion == "2":
             print("Opciones de maestros: agregar, eliminar, listar, buscar")
         elif opcion == "3":
@@ -181,3 +216,5 @@ if __name__ == "__main__":
     cargar_datos()
     menu_principal()
     guardar_datos()
+
+
