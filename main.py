@@ -280,6 +280,4 @@ def menu_principal():
 if __name__ == "__main__":
     cargar_datos()
     menu_principal()
-    guardar_datos()
-
-
+    guardar_datos()afa
