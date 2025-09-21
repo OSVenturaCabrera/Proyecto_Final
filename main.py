@@ -2,6 +2,7 @@
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
 import json
+import os
 
 # Diccionarios para almacenar la información
 estudiantes = {}
