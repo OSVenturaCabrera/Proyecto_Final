@@ -1,4 +1,4 @@
-# ============================== Usted esta en Curso.
+# ============================== Usted esta en Curso starlyn.
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
 import json
