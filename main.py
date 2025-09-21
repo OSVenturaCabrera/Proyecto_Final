@@ -3,6 +3,7 @@
 # ==============================
 import json
 import os
+os.system("cls")
 
 # Diccionarios para almacenar la información
 estudiantes = {}
@@ -282,4 +283,7 @@ if __name__ == "__main__":
     cargar_datos()
     menu_principal()
     guardar_datos()
+
+    mostrar_encabezado("PROYECTO DE PYTHON TERMINADO")
+    mostrar_encabezado("GRACIAS CHICOS POR DAR LO MEJOR")
 
