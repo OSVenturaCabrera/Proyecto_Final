@@ -1,16 +1,7 @@
-# ============================== Usted esta en Curso.
+# ==============================
 # SISTEMA ESCOLAR BÁSICO
 # ==============================
-<<<<<<< HEAD
 import json
-import os
-
-import os
-os.system("cls") # limpiar consola
-=======
-import os
-os.system("cls")
->>>>>>> f2bad45238d7151b5463c04ec3533d9c1d2d693a
 
 # Diccionarios para almacenar la información
 estudiantes = {}
@@ -42,11 +33,7 @@ def listar_estudiantes():
 
 def buscar_estudiante(id_estudiante):
     """Busca un estudiante por ID"""
-    nombre = estudiantes.get(id_estudiante)
-    if id_estudiante in estudiantes.keys():
-        print(f"el estudiante del ID: {id_estudiante} es {nombre}")
-    else:
-        print("Error!!, ID no encontrado.")
+    return estudiantes.get(id_estudiante, "Estudiante no encontrado")
 
 # ------------------------------
 # Funciones de gestión de maestros
@@ -195,79 +182,13 @@ def menu_principal():
         opcion = input("Elige una opción: ")
         
         if opcion == "1":
-<<<<<<< HEAD
-            print("Opciones de estudiantes, presione el numero segun su opcion: ")
-            op = int(input("\n1: agregar, 2: eliminar, 3: listar, 4: buscar | "))
-            match op:
-                case 1:
-                    cantidad = int(input("Cuantos estudiantes desea ingresar? "))
-                    try:
-                        for i in range(cantidad):
-                            nombre_estudiante = str(input("Ingresa el nombre de tu estudiante: "))
-                            iD_estudiante = int(input(f"Ingresa el ID de {nombre_estudiante}: "))
-                            agregar_estudiante(nombre_estudiante, iD_estudiante)
-                    except:
-                        print("Error!!, debe ingresar los datos de forma correcta.")
-                case 2:
-                    try:
-                        iD_estudiante = int(input(f"Ingresa el ID de su estuadiente a eliminar: "))
-                        eliminar_estudiante(iD_estudiante)
-                    except:
-                        print("Error!!, ID no encontrado.")
-                case 3:
-                    # muestra los estudiantes de forma ordenada:
-                    listar_estudiantes()
-                case 4:
-                    try:
-                        iD_estudiante = int(input(f"Ingresa el ID de su estuadiente a bucar: "))
-                        buscar_estudiante(iD_estudiante)
-                    except:
-                        print("Error!!, ID no encontrado.")
-                case _:
-                    print("Error!!, opcion no valida, vuelva a intentarlo.")
-=======
-            print("Opciones de estudiantes: 1: agregar, 2: eliminar, 3: listar, 4: buscar")
->>>>>>> f2bad45238d7151b5463c04ec3533d9c1d2d693a
+            print("Opciones de estudiantes: agregar, eliminar, listar, buscar")
         elif opcion == "2":
-            print("Opciones de estudiantes: 1: agregar, 2: eliminar, 3: listar, 4: buscar")
-            op = int(input("Que quieres realizar: "))
-            if op == 1:
-                Veces = int(input("cuantos Maestro Quieres agregar: "))
-                for i in range(Veces):
-                    nombre = input("Nombre del Maestro: ")
-                    id_maestro = input("ID del Maestro: ")
-                    agregar_maestro(nombre, id_maestro)
-            if op == 2:
-                id_maestro = input("ID Del Maestro que quiere Eliminar: ")
-                eliminar_maestro(id_maestro)
-            if op == 3:
-                listar_maestros()
-            if op == 4:
-                id_maestro = input("Id del Maestro para buscarlo: ")
-                buscar_maestro(id_maestro)
+            print("Opciones de maestros: agregar, eliminar, listar, buscar")
         elif opcion == "3":
             print("Opciones de cursos: agregar, eliminar, listar, asignar maestro")
-
-
         elif opcion == "4":
-            print("Opciones de notas")
-            print("1: agregar    2: listar   3: promedio      4: mejores")
-            op = int(input("Que Opcion desea Realizar: "))
-            if op == 1:
-                id_estudiante = input("Id del estudiante Al que va agregar la nota: ")
-                id_curso = input("Id Del curso del estuidantes: ")
-                nota = float(int("Nota del Estudiante: "))
-                agregar_nota(id_estudiante, id_curso, nota)
-            if op == 2:
-                id_estudiante = input("Id del estudiante para ver la notas: ")
-                listar_notas_estudiante(id_estudiante)
-            if op == 3:
-                id_estudiante = input("Id del estudiante para ver la notas: ")
-                calcular_promedio(id_estudiante)
-            if op == 4:
-                id_curso =  input("Id del curso: ")
-                mejores_estudiantes(id_curso, n=5)
-
+            print("Opciones de notas: agregar, listar, promedio, mejores")
         elif opcion == "5":
             print("Saliendo del sistema...")
             break
@@ -280,4 +201,4 @@ def menu_principal():
 if __name__ == "__main__":
     cargar_datos()
     menu_principal()
-    guardar_datos()afa
+    guardar_datos()
